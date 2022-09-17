@@ -74,12 +74,12 @@ macro_rules! wait_for {
 
 /// Memory mapped implementation
 mod mmio;
-#[cfg(target_arch = "x86_64")]
+#[cfg(any(target_arch = "x86_64", target_arch="x86"))]
 /// Port asm commands implementation
 mod port;
 
 pub use crate::mmio::MmioSerialPort;
-#[cfg(target_arch = "x86_64")]
+#[cfg(any(target_arch = "x86_64", target_arch="x86"))]
 pub use crate::port::SerialPort;
 
 bitflags! {
