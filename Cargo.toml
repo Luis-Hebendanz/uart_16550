@@ -12,7 +12,7 @@ bitflags = "1.1.0"
 rustversion = "1.0.5"
 
 [target.'cfg(target_arch = "x86_64")'.dependencies]
-x86_64 = { git="https://github.com/Luis-Hebendanz/rs_86_64.git", default-features = false, features = ["instructions"] }
+x86_64 = { git= "https://github.com/Luis-Hebendanz/x86_64.git", branch = "new_registers" }
 
 [features]
 default = []
