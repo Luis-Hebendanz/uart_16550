@@ -1,11 +1,15 @@
 use core::fmt;
 
+#[cfg(target_arch = "x86_64")]
 use x86_64::instructions::port::{Port, PortReadOnly, PortWriteOnly};
+
+#[cfg(target_arch = "x86")]
+use x86::instructions::port::{Port, PortReadOnly, PortWriteOnly};
+
 
 use crate::LineStsFlags;
 
 /// A port-mapped UART.
-#[cfg_attr(docsrs, doc(cfg(target_arch = "x86_64")))]
 pub struct SerialPort {
     data: Port<u8>,
     int_en: PortWriteOnly<u8>,
