@@ -1,4 +1,8 @@
+#![allow(clippy::missing_safety_doc)]
+
+
 use core::fmt;
+
 
 #[cfg(target_arch = "x86_64")]
 use x86_64::instructions::port::{Port, PortReadOnly, PortWriteOnly};
